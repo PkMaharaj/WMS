@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="splashscreenVM" type="com.wms.superadmin.modules.splashscreen.data.viewmodel.SplashscreenVM"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintGroup22"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+
+
+        <ImageView
+            android:id="@+id/imageMWBLogos123no"
+            imageRes="@{@drawable/img_mwblogos123no}"
+            android:layout_width="@dimen/_146pxh"
+            android:layout_height="@dimen/_103pxh"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_mwblogos123no" />
+
+        <TextView
+            android:id="@+id/txtWMSMOBILE"
+            style="@style/txtCenturyGothicbold35"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@{splashscreenVM.splashscreenModel.txtWMSMOBILE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageMWBLogos123no"
+            tools:text="@string/lbl_wms_mobile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

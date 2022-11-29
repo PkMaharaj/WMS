@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="salesOrderRowModel"
+            type="com.wms.superadmin.modules.salesorderbranch.data.model.SalesOrderRowModel"/>
+    </data>
+    
+    <LinearLayout
+        android:id="@+id/constraintGroup57"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/table_row">
+        
+        <TextView
+            android:id="@+id/so_branchname"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:text="@{salesOrderRowModel.so_branchname}"
+            tools:text="@string/lbl_hubli"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/so_totalvouchercount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@{salesOrderRowModel.so_totalvouchercount}"
+            tools:text="@string/lbl_10"
+            android:gravity="center"
+            android:textSize="@dimen/_15sp"/>
+
+        <TextView
+            android:id="@+id/so_value"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@{salesOrderRowModel.so_value}"
+            tools:text="@string/lbl_0"
+            android:gravity="center"
+            android:textSize="@dimen/_14sp"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="salesOrderMonthlyVM" type="com.wms.superadmin.modules.salesordermonthly.data.viewmodel.SalesOrderMonthlyVM"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintSalesordermon"
+        style="@style/groupStylewhite_A700"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetStart="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintToolbar"
+                style="@style/groupStyledeep_orange_100"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtSalesOrder"
+                    style="@style/txtRobotobold23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:ellipsize="end"
+                    android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtOrder}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/backLSOM"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/backLSOM"
+                    android:layout_width="@dimen/_40pxh"
+                    android:layout_height="@dimen/_40pxh"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/backSOM"
+                        android:layout_width="@dimen/_15pxh"
+                        android:layout_height="@dimen/_20pxh"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_frame61"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtSalesOrder" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/constraintHeadline"
+            style="@style/groupStyledeep_orange_100cornerRadius"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40pxh"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup13">
+
+            <TextView
+                android:id="@+id/txtMonthName"
+                style="@style/txtRobotobold12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtMonthName}"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txtTotalVouchers"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/lbl_month" />
+
+            <TextView
+                android:id="@+id/txtTotalVouchers"
+                style="@style/txtRobotobold12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="0.6"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtTotalVouchers}"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/lbl_total_vouchers" />
+
+            <TextView
+                android:id="@+id/txtheadingvalue"
+                style="@style/txtRobotobold12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1.4"
+                android:gravity="center"
+                android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtheadingvalue}"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold"
+                tools:text="Value" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/constraintGroup327"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/_10pxh"
+            android:layout_height="@dimen/_40pxh"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:layout_marginEnd="@dimen/_10pxh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar">
+
+
+            <Spinner
+                android:id="@+id/spinnerBranch"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/rectangle_bg_red_200_radius_5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/spinner_item" />
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40pxh"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:background="@drawable/rectangle_bg_deep_orange_100_radius_5"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/lbl_search"/>
+        </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintGroup326"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_marginBottom="@dimen/_9pxv"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints">
+<!--                app:layout_constraintBottom_toBottomOf="@+id/constraintBtnprimary"-->
+                <!--                app:layout_constraintTop_toTopOf="@+id/constraintBtnprimary"-->
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/txtVoucherwise"-->
+                <!--                    style="@style/txtRobotobold14_1"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="@dimen/_1pxh"-->
+                <!--                    android:ellipsize="end"-->
+                <!--                    android:gravity="center"-->
+                <!--                  -->
+                <!--                    android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtVoucherwise}"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toEndOf="@+id/imageBxradiocircle"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent"-->
+                <!--                    tools:text="@string/lbl_voucherwise" />-->
+<!--                <CheckBox-->
+<!--                    android:id="@+id/voucherwise"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:ellipsize="end"-->
+<!--                  -->
+<!--                    android:text="@string/lbl_voucherwise"-->
+<!--                    android:textColor="@color/black_900"-->
+<!--                    android:textSize="@dimen/_13pxh"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    tools:ignore="MissingConstraints,NotSibling"-->
+<!--                    tools:text="@string/lbl_voucherwise" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintGroup13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10pxv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup327">
+
+            <LinearLayout
+                android:id="@+id/linearHeadline"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30pxh"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_8pxv"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:elevation="@dimen/_5pxh"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/txtFrom"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtFrom}"
+                    tools:text="@string/lbl_from" />
+
+                <TextView
+                    android:id="@+id/txtFromdate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtFromdate}"
+                    tools:text="@string/lbl_21_01_2022" />
+
+                <TextView
+                    android:id="@+id/txtTo"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtTo}"
+                    tools:text="@string/lbl_to" />
+
+                <TextView
+                    android:id="@+id/txtTodate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtTodate}"
+                    tools:text="@string/lbl_21_01_2022" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/constraintGroup12"
+            style="@style/groupStyledeep_orange_101"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35pxh"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/total"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="0.5"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:textSize="@dimen/_18sp"/>
+
+                <TextView
+                    android:id="@+id/txtvouchers"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.25"
+                    android:layout_marginEnd="@dimen/_10pxv"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.txtvouchers}"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    tools:text="wbcwd"
+                    android:textSize="@dimen/_15pxh"/>
+
+            <TextView
+                android:id="@+id/totalvalue"
+                android:layout_width="0dp"
+                android:layout_weight="1.25"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:layout_gravity="center"
+                tools:text="wbcwd"
+                android:text="@{salesOrderMonthlyVM.salesOrderMonthlyModel.totalvalue}"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15pxh"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclersalesordermonthly"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/constraintGroup12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintHeadline"
+            tools:listitem="@layout/row_sales_order_monthly1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

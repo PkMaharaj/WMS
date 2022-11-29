@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="stock_report_row_model" type="com.wms.superadmin.modules.stocksummary.sritem.data.model.StockReportRowModel"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/rowLayout"
+        android:layout_width="match_parent"
+        android:padding="@dimen/_5pxh"
+        android:layout_margin="@dimen/_5pxh"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        style="@style/table_row">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/sr_header"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/_19pxh"
+                android:layout_weight="1"
+                tools:text="@string/lbl_hubli"
+                android:paddingStart="@dimen/_5pxh"
+                android:gravity="start" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/openingLayout"
+            android:layout_marginTop="@dimen/_5pxh"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/openingrow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/lbl_opening"
+                android:paddingStart="@dimen/_5pxh"
+                android:gravity="start" />
+
+            <TextView
+                android:id="@+id/openingQty"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="@{stock_report_row_model.openingQTY.toString()}"
+                tools:text="@string/lbl_10"
+                android:paddingEnd="@dimen/_5pxh"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/openingValue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="@{stock_report_row_model.openingValue.toString()}"
+                tools:text="@string/lbl_10"
+                android:paddingEnd="@dimen/_5pxh"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/inwardLayout"
+            android:layout_marginTop="@dimen/_5pxh"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/inwardrow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/lbl_inward"
+                android:paddingStart="@dimen/_5pxh"
+                android:gravity="start" />
+
+            <TextView
+                android:id="@+id/inwardQty"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="@{stock_report_row_model.inwardQTY.toString()}"
+                tools:text="@string/lbl_10"
+                android:paddingEnd="@dimen/_5pxh"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/inwardValue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="@{stock_report_row_model.inwardQTYValue.toString()}"
+                tools:text="@string/lbl_10"
+                android:paddingEnd="@dimen/_5pxh"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/outwardLayout"
+            android:layout_marginTop="@dimen/_5pxh"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/outwardrow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/lbl_outward"
+                android:paddingStart="@dimen/_5pxh"
+                android:gravity="start" />
+
+            <TextView
+                android:id="@+id/outwardQty"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="@{stock_report_row_model.outwardQTY.toString()}"
+                tools:text="@string/lbl_10"
+                android:paddingEnd="@dimen/_5pxh"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/outwardValue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="@{stock_report_row_model.outwardQTYValue.toString()}"
+                tools:text="@string/lbl_10"
+                android:paddingEnd="@dimen/_5pxh"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/closingLayout"
+            android:layout_marginTop="@dimen/_5pxh"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/closingrow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/lbl_closing"
+                android:paddingStart="@dimen/_5pxh"
+                android:gravity="start" />
+
+            <TextView
+                android:id="@+id/closingQty"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="@{stock_report_row_model.closingQty.toString()}"
+                tools:text="@string/lbl_10"
+                android:paddingEnd="@dimen/_5pxh"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/closingValue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="@{stock_report_row_model.closingQtyValue.toString()}"
+                tools:text="@string/lbl_10"
+                android:paddingEnd="@dimen/_5pxh"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

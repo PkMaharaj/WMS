@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="salesRegBranches1RowModel"
+            type="com.wms.superadmin.modules.salesregbranches.data.model.SalesRegBranches1RowModel"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/SalesregbaranchGroup"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_35pxh"
+        android:layout_width="match_parent"
+        android:weightSum="4"
+        style="@style/table_row">
+
+            <TextView
+                android:id="@+id/txtBrachnameBranch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@{salesRegBranches1RowModel.txtBrachnameBranch}"
+                tools:text="@string/lbl_hubli"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/txtDebitBranch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@{salesRegBranches1RowModel.txtDebitBranch.toString()}"
+                tools:text="@string/lbl_1000"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/txtCreditBranch"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@{salesRegBranches1RowModel.txtCreditBranch.toString()}"
+                tools:text="@string/lbl_9000"
+                android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/txtNetsalesBranch"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@{salesRegBranches1RowModel.txtNetsalesBranch.toString()}"
+            tools:text="@string/lbl_10000"
+            android:gravity="center"/>
+    </LinearLayout>
+</layout>

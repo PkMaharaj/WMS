@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="salesRegMonth1RowModel"
+            type="com.wms.superadmin.modules.salesregmonth.data.model.SalesRegMonth1RowModel"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/constraintGroup"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:weightSum="4"
+        style="@style/table_row">
+
+        <TextView
+            android:id="@+id/txtMonthSalesregbranch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@{salesRegMonth1RowModel.txtMonthSalesregbranch}"
+            tools:text="@string/lbl_may"
+            android:gravity="start"/>
+
+        <TextView
+            android:id="@+id/txtDebitSalesregbranch"
+            android:layout_gravity="top"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@{salesRegMonth1RowModel.txtDebitSalesregbranch}"
+            tools:text="@string/lbl_100"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/txtCreditSalesregbranch"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@{salesRegMonth1RowModel.txtCreditSalesregbranch}"
+            tools:text="@string/lbl_100"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/txtNetsalesSalesregbranch"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@{salesRegMonth1RowModel.txtNetsalesSalesregbranch}"
+            tools:text="@string/lbl_10"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</layout>

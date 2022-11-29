@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="bankbookVM" type="com.wms.superadmin.modules.bankbook.data.viewmodel.BankbookVM"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintGroup13"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+               style="@style/Toolbar"
+                app:contentInsetStart="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintGroup2"
+                    android:layout_height="match_parent" android:layout_width="match_parent">
+                    <TextView android:id="@+id/txtBankBook"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="BankBook"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imageLsgraph"
+                        app:layout_constraintStart_toEndOf="@+id/imageBackImg"
+                        app:layout_constraintTop_toTopOf="parent"
+                        style="@style/txtRobotobold17"/>
+
+                    <ImageView
+                        android:id="@+id/imageLsgraph"
+                        android:layout_width="@dimen/_26pxh"
+                        android:layout_height="@dimen/_24pxh"
+                        android:layout_marginEnd="@dimen/_5pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_lsgraph"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageBackImg"
+                        style="@style/Toolbar_backNav"
+                        android:elevation="@dimen/_6pxh"
+                        android:src="@drawable/img_back"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:id="@+id/scrollViewScrollview"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/constraintToolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintBankBook"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+                <LinearLayout
+                    android:id="@+id/linearGroup4"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:elevation="@dimen/_3pxh"
+                    android:layout_margin="@dimen/_10pxh"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/groupStyledeep_orange_100_abcornerRadius">
+                    <ImageView android:id="@+id/imageWallet"
+                        android:layout_height="@dimen/_25pxh"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_width="@dimen/_25pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_wallet"/>
+
+                    <TextView
+                        android:id="@+id/txttotalCash"
+                        style="@style/txtPoppinssemibold18"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/_16pxh"
+                        android:scaleType="fitXY"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_weight="0.6"
+                        android:gravity="center"
+                        android:text="Cash in Bank" />
+
+                    <TextView
+                        android:id="@+id/txtCashInBank"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_15pxh"
+                        android:paddingStart="@dimen/_5pxh"
+                        android:layout_marginTop="@dimen/_11pxv"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:gravity="start|center"
+                        android:text="@{bankbookVM.bankbookModel.txtCashInBank}"
+                        style="@style/txtPoppinssemibold18_1" tools:text="@string/lbl_1000_00"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearGroup283"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_margin="@dimen/_10pxh"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearGroup4"
+                    app:layout_constraintBottom_toTopOf="@+id/linearHeadline">
+
+                    <Spinner
+                        android:id="@+id/periodSpinner"
+                        android:elevation="@dimen/_5pxh"
+                        android:padding="@dimen/_5pxh"
+                        android:layout_margin="@dimen/_5pxh"
+                        style="@style/groupStylered_200cornerRadius"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_marginEnd="@dimen/_3pxh"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/spinner_item" />
+
+                    <Spinner
+                        android:id="@+id/branchlistspinner"
+                        android:layout_width="0dp"
+                        android:layout_margin="@dimen/_5pxh"
+                        android:elevation="@dimen/_3pxh"
+                        android:padding="@dimen/_5pxh"
+                        style="@style/groupStylered_200cornerRadius"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        tools:listitem="@layout/spinner_item" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearHeadline"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_width="0dp"
+                    android:elevation="@dimen/_5pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearGroup283">
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtFrom"
+                        android:background="@color/deep_orange_100"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:text="@{bankbookVM.bankbookModel.txtFrom}"
+                        style="@style/txtRobotobold15" tools:text="@string/lbl_from"/>
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/txtFromdate"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/outline"
+                        android:layout_width="0dp"
+                        android:text="@{bankbookVM.bankbookModel.Fromdate}"
+                        style="@style/txtRobotobold15"
+                        tools:text="@string/lbl_21_01_2022"/>
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtTo"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:background="@color/deep_orange_100"
+                        android:layout_width="0dp"
+                        android:text="@{bankbookVM.bankbookModel.txtTo}"
+                        style="@style/txtRobotobold15" tools:text="@string/lbl_to"/>
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtTodate"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/outline"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:text="@{bankbookVM.bankbookModel.Todate}"
+                        style="@style/txtRobotobold15" tools:text="@string/lbl_21_01_2022"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearHeadline1"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_6pxh"
+                    android:layout_marginTop="@dimen/_14pxv"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:padding="@dimen/_5pxh"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearHeadline" style="@style/groupStyledeep_orange_1">
+
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/txtBranches"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/_16pxh"
+                        android:text="Branches"
+                        style="@style/txtRobotoboldbank"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerBankbooklist"
+                    itemSpace="@{@dimen/_1pxh}"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearHeadline1"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:listitem="@layout/row_bankbook1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/constraintToolbar"
+            style="@style/groupStyledeep_orange_100"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="4">
+                <TextView
+                    android:id="@+id/txtop"
+                    style="@style/txtRobotobold13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5pxh"
+                    android:text="@string/lbl_opening_balance1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/txcolon"
+                    style="@style/txtRobotobold13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5pxh"
+                    android:text="@string/lbl_colon"
+                    android:paddingLeft="@dimen/_19pxh"
+                    app:layout_constraintEnd_toStartOf="@+id/txtopeningBalance2"
+                    app:layout_constraintStart_toEndOf="@+id/txtop"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/txtopeningBalance2"
+                    style="@style/txtRobotobold13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5pxh"
+                    android:layout_marginTop="@dimen/_6pxh"
+                    android:orientation="vertical"
+                    android:text="@{bankbookVM.bankbookModel.openingBalance}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/lbl_450000" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txttotalcredirbal"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:text="@string/msg_total_credit_ba"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/txcolon1"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:text="@string/lbl_colon"
+                app:layout_constraintEnd_toEndOf="@+id/txcolon"
+                app:layout_constraintStart_toEndOf="@+id/txttotalcredirbal"
+                app:layout_constraintTop_toBottomOf="@+id/txcolon" />
+
+            <TextView
+                android:id="@+id/txtcreditBalance"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/_5pxh"
+                android:text="@{bankbookVM.bankbookModel.totalCreditBalance}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtopeningBalance2"
+                tools:text="@string/lbl_450000" />
+                 </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtTotalBal2"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:text="@string/msg_total_debit_bal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txttotalcredirbal" />
+
+            <TextView
+                android:id="@+id/txcolon2"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:text="@string/lbl_colon"
+                android:paddingLeft="@dimen/_5pxh" />
+
+            <TextView
+                android:id="@+id/txttotalbalance"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:orientation="vertical"
+                android:text="@{bankbookVM.bankbookModel.totalDebitBalance}"
+                tools:text="@string/lbl_450000" />
+        </LinearLayout>
+
+                <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+                    <TextView
+                android:id="@+id/txtTotalBal"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:layout_marginStart="4dp"
+                android:text="@string/lbl_total_bal"
+                app:layout_constraintVertical_bias="0.636" />
+
+            <TextView
+                android:id="@+id/txcolon3"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:paddingLeft="@dimen/_24pxh"
+                android:text="@string/lbl_colon" />
+
+            <TextView
+                android:id="@+id/txttotalbalance2"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:layout_marginTop="@dimen/_6pxh"
+                android:text="@{bankbookVM.bankbookModel.closingBalance}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txcolon3"
+                app:layout_constraintTop_toBottomOf="@+id/txttotalbalance"
+                tools:text="@string/lbl_450000" />
+           </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="notificationApprovalRowModel"
+            type="com.wms.superadmin.modules.notificationapproval.data.model.NotificationApprovalRowModel"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/constraintGroup"
+        android:layout_height="wrap_content"
+        style="@style/groupStylegray_200"
+        android:layout_margin="@dimen/_5pxv"
+        android:layout_width="match_parent"
+        android:weightSum="5">
+
+        <TextView
+            android:gravity="top|start"
+            android:id="@+id/txtItemName"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:text="@{notificationApprovalRowModel.txtItemName}"
+            style="@style/txtRobotoregular15"
+            tools:text="@string/lbl_name1"/>
+
+        <TextView
+            android:id="@+id/txtqtyordered"
+            style="@style/txtRobotomedium13"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10pxh"
+            android:ellipsize="end"
+            android:gravity="top|start"
+            android:text="@{notificationApprovalRowModel.txtqtyordered}"
+            tools:text="@string/msg_quantity_ordere" />
+
+        <TextView
+            android:id="@+id/txt10"
+            style="@style/txtRobotomedium13"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@{notificationApprovalRowModel.txtdiscountpercent.toString()}"
+            tools:text="@string/lbl_10" />
+
+        <EditText
+            android:id="@+id/txtchangeamt"
+            style="@style/txtRobotomedium13"
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:padding="@dimen/_5sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="top|start"
+            android:maxLength="2"
+            android:background="@drawable/rounded_edittext"
+            android:text="@{notificationApprovalRowModel.txtchangeamt.toString()}"
+            tools:text="@string/lbl_10"
+            android:paddingStart="@dimen/_10pxh"
+            android:autofillHints=""
+            android:inputType="number"/>
+
+        <CheckBox
+            android:id="@+id/chx_itemdiscount"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+    </LinearLayout>
+</layout>

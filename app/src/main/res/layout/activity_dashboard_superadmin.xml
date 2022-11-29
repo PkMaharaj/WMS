@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="dashboardSuperadminVM"
+            type="com.wms.superadmin.modules.dashboardsuperadmin.data.viewmodel.DashboardSuperadminVM"/>
+    </data>
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        style="@style/groupStylewhite_A700">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintGroup63"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            style="@style/groupStylewhite_A700">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarToolbar"
+                style="@style/Toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintTopbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageAlignjustify"
+                        android:layout_width="26dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_alignjustify"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/Signout"
+                        android:layout_width="@dimen/_23pxh"
+                        android:layout_height="@dimen/_22pxh"
+                        android:layout_marginEnd="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_signoutalt"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/refresh"
+                        android:layout_width="@dimen/_25pxh"
+                        android:layout_height="@dimen/_25pxh"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:scaleType="fitXY"
+                        app:tint="@color/red_600"
+                        android:src="@drawable/ic_refresh"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/Signout"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtWMS"
+                        style="@style/txtRobotobold20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/lbl_w_m_s"
+                        app:layout_constraintEnd_toStartOf="@+id/Signout"
+                        app:layout_constraintStart_toEndOf="@+id/imageAlignjustify"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/lbl_w_m_s" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar"
+                app:layout_constraintBottom_toBottomOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintGroup24"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar">
+
+                <TextView
+                    android:id="@+id/username"
+                    style="@style/etSolidRounded_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:background="@drawable/rectangle_bg_red_600_96_radius_15"
+                    android:paddingTop="@dimen/_5pxv"
+                    android:paddingBottom="@dimen/_5pxv"
+                    android:textColorHint="@color/white_A700"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintFrame1"
+                    style="@style/groupStylecornerRadius"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16pxv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/username">
+
+                    <ImageView
+                        android:id="@+id/imageRectangle140"
+                        cornerRadius="@{@dimen/_15pxh}"
+                        imageRes="@{@drawable/img_rectangle140}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_186pxh"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="@dimen/_3pxv"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.75609756"
+                        tools:src="@drawable/img_rectangle140" />
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageRectangle141"-->
+<!--                        cornerRadius="@{@dimen/_15pxh}"-->
+<!--                        imageRes="@{@drawable/img_rectangle141}"-->
+<!--                        android:layout_width="@dimen/_55pxh"-->
+<!--                        android:layout_height="@dimen/_186pxh"-->
+<!--                        android:layout_marginStart="@dimen/_18pxh"-->
+<!--                        android:layout_marginBottom="@dimen/_3pxv"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.27"-->
+<!--                        app:layout_constraintStart_toEndOf="@+id/imageRectangle140"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        tools:src="@drawable/img_rectangle141" />-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/constraintGroup25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="2"
+                    android:layout_margin="@dimen/_10pxh"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintFrame1"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintGroup83">
+
+                    <Spinner
+                        android:id="@+id/periodSpinner"
+                        android:elevation="@dimen/_10pxh"
+                        android:padding="@dimen/_5pxh"
+                        android:layout_margin="@dimen/_5pxh"
+                        style="@style/groupStylered_200cornerRadius"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_marginEnd="@dimen/_3pxh"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/spinner_item"
+                        />
+
+                        <Spinner
+                            android:id="@+id/branchlistspinner"
+                            android:layout_width="0dp"
+                            android:layout_margin="@dimen/_5pxh"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:elevation="@dimen/_3pxh"
+                            android:padding="@dimen/_5pxh"
+                            style="@style/groupStylered_200cornerRadius"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.3"
+                            tools:listitem="@layout/spinner_item"
+                            />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/constraintGroup83"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_10pxh"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintGroup25">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewSalesCard"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_margin="@dimen/_5pxh"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/_15pxh"
+                        app:cardElevation="@dimen/_5pxh"
+                        app:cardBackgroundColor="@color/gray_900"
+                        style="@style/groupStylecornerRadius">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintGroup87"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_5pxh"
+                            android:layout_width="match_parent">
+                            <ImageView android:id="@+id/imageVec"
+                                android:layout_height="@dimen/_20pxh"
+                                android:layout_marginEnd="@dimen/_35pxh"
+                                android:layout_marginStart="@dimen/_27pxh"
+                                android:layout_width="@dimen/_22pxh"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/sales_vector"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+                            <TextView android:id="@+id/txtCategory1"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_17pxh"
+                                android:layout_marginStart="@dimen/_17pxh"
+                                android:layout_marginTop="@dimen/_5pxv"
+                                android:layout_width="wrap_content"
+                                android:text="@string/lbl_sales"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageVec"
+                                style="@style/txtPoppinssemibold18"
+                                tools:text="@string/lbl_sales"/>
+                            <TextView
+                                android:id="@+id/txtCategory4"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="@{dashboardSuperadminVM.dashboardSuperadminModel.sales}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtCategory1"
+                                style="@style/txtPoppinssemibold18_1"
+                                tools:text="@string/lbl_1000_10"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewPurchaseCard"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_margin="@dimen/_5pxh"
+                        app:cardCornerRadius="@dimen/_15pxh"
+                        app:cardBackgroundColor="@color/green_900"
+                        app:cardElevation="@dimen/_5pxh"
+                        style="@style/groupStylecornerRadius_1">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintGroup365"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5pxh"
+                            android:layout_width="match_parent">
+                            <ImageView android:id="@+id/imageVector1"
+                                android:layout_height="@dimen/_20pxh"
+                                android:layout_marginEnd="@dimen/_33pxh"
+                                android:layout_marginStart="@dimen/_31pxh"
+                                android:layout_width="@dimen/_22pxh"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/purchase_vector"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+                            <TextView android:id="@+id/txtCategory3"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_7pxv"
+                                android:layout_width="wrap_content"
+                                android:text="@string/lbl_purchase"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageVector1"
+                                style="@style/txtPoppinssemibold18" tools:text="@string/lbl_purchase"/>
+                            <TextView android:id="@+id/txtCategory5"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_1pxh"
+                                android:layout_marginStart="@dimen/_1pxh"
+                                android:layout_width="wrap_content"
+                                android:text="@{dashboardSuperadminVM.dashboardSuperadminModel.purchase}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtCategory3"
+                                style="@style/txtPoppinssemibold18_1" tools:text="@string/lbl_1000_10"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/constraintGroup84"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="@dimen/_10pxh"
+                    android:layout_width="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintGroup83">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewReceivableCard"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_margin="@dimen/_5pxh"
+                        app:cardCornerRadius="@dimen/_15pxh"
+                        app:cardElevation="@dimen/_5pxh"
+                        app:cardBackgroundColor="@color/green_900"
+                        android:layout_weight="1">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintGroup366"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5pxh"
+                            android:layout_width="match_parent">
+                            <ImageView android:id="@+id/imageVector2"
+                                android:layout_height="@dimen/_20pxh"
+                                android:layout_marginEnd="@dimen/_42pxh"
+                                android:layout_marginStart="@dimen/_46pxh"
+                                android:layout_width="@dimen/_22pxh"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/rece_vector"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.55"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+                            <TextView android:id="@+id/txtLanguage"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5pxv"
+                                android:layout_width="wrap_content"
+                                android:text="@string/lbl_receivables"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageVector2"
+                                style="@style/txtPoppinssemibold18"
+                                tools:text="@string/lbl_receivables"/>
+                            <TextView android:id="@+id/txtLanguage1"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_34pxh"
+                                android:layout_marginStart="@dimen/_34pxh"
+                                android:layout_width="wrap_content"
+                                android:text="@{dashboardSuperadminVM.dashboardSuperadminModel.receivables}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtLanguage"
+                                style="@style/txtPoppinssemibold18_1" tools:text="@string/lbl_1000"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewPayablesCard"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_margin="@dimen/_5pxh"
+                        app:cardCornerRadius="@dimen/_15pxh"
+                        app:cardElevation="@dimen/_5pxh"
+                        app:cardBackgroundColor="@color/green_900">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintGroup367"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5pxh"
+                            android:layout_width="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imageVector3"
+                                android:layout_width="@dimen/_22pxh"
+                                android:layout_height="@dimen/_20pxh"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/payable_vector"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                            <TextView android:id="@+id/txtCategory2"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5pxv"
+                                android:layout_width="wrap_content"
+                                android:text="@string/lbl_payables"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageVector3"
+                                style="@style/txtPoppinssemibold18" tools:text="@string/lbl_payables"/>
+                            <TextView android:id="@+id/txtCategory6"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_21pxh"
+                                android:layout_marginStart="@dimen/_20pxh"
+                                android:layout_width="wrap_content"
+                                android:text="@{dashboardSuperadminVM.dashboardSuperadminModel.payables}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtCategory2"
+                                style="@style/txtPoppinssemibold18_1" tools:text="@string/lbl_1000"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/constraintGroup85"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10pxh"
+                    android:layout_width="0dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintGroup84">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewCashCard"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_margin="@dimen/_5pxh"
+                        app:cardCornerRadius="@dimen/_15pxh"
+                        app:cardElevation="@dimen/_5pxh"
+                        app:cardBackgroundColor="@color/green_900"
+                        android:layout_weight="1">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintGroup368"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5pxh"
+                            android:layout_width="match_parent">
+                            <ImageView android:id="@+id/imageVector4"
+                                android:layout_height="@dimen/_20pxh"
+                                android:layout_width="@dimen/_21pxh"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/cash_vector"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+                            <TextView android:id="@+id/txtCategory9"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5pxv"
+                                android:layout_width="wrap_content"
+                                android:text="@string/lbl_cash"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageVector4"
+                                style="@style/txtPoppinssemibold18" tools:text="@string/lbl_cash"/>
+                            <TextView android:id="@+id/txtCategory10"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="@{dashboardSuperadminVM.dashboardSuperadminModel.cashBook}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtCategory9"
+                                style="@style/txtPoppinssemibold18_1"
+                                tools:text="@string/lbl_1000"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewBankCard"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/_15pxh"
+                        android:layout_margin="@dimen/_5pxh"
+                        app:cardElevation="@dimen/_5pxh"
+                        app:cardBackgroundColor="@color/green_900">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintGroup369"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5pxh"
+                            android:layout_width="match_parent">
+                            <ImageView android:id="@+id/imageVector5"
+                                android:layout_height="@dimen/_20pxh"
+                                android:layout_marginEnd="@dimen/_12pxh"
+                                android:layout_marginStart="@dimen/_12pxh"
+                                android:layout_width="@dimen/_23pxh"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bank_vector"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+                            <TextView android:id="@+id/txtCategory7"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5pxv"
+                                android:layout_width="wrap_content"
+                                android:text="@string/lbl_bank"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageVector5"
+                                style="@style/txtPoppinssemibold18"
+                                tools:text="@string/lbl_bank"/>
+                            <TextView android:id="@+id/txtLanguage2"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="@{dashboardSuperadminVM.dashboardSuperadminModel.bankBook}"
+                                style="@style/txtPoppinssemibold18_1"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtCategory7"
+                                tools:text="@string/lbl_1000"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/constraintGroup86"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10pxh"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintGroup85">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewNotificationCard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5pxh"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/green_900"
+                        app:cardCornerRadius="@dimen/_15pxh"
+                        app:cardElevation="@dimen/_5pxh">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintGroup371"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5pxh">
+
+                            <ImageView
+                                android:id="@+id/imageVector6"
+                                android:layout_width="@dimen/_15pxh"
+                                android:layout_height="@dimen/_19pxh"
+                                android:layout_marginStart="@dimen/_46pxh"
+                                android:layout_marginEnd="@dimen/_44pxh"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/note_vector"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/txtCategory16"
+                                style="@style/txtPoppinssemibold18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_6pxv"
+                                android:text="@string/lbl_notification"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageVector6"
+                                tools:text="@string/lbl_notification" />
+
+                            <TextView
+                                android:id="@+id/txtCategory17"
+                                style="@style/txtPoppinssemibold18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_48pxh"
+                                android:layout_marginEnd="@dimen/_47pxh"
+                                android:text="@string/lbl_5"
+                                android:visibility="invisible"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtCategory16"
+                                tools:text="@string/lbl_5" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewStockCard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5pxh"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/green_900"
+                        app:cardCornerRadius="@dimen/_15pxh"
+                        app:cardElevation="@dimen/_5pxh">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintGroup370"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5pxh">
+
+                            <ImageView
+                                android:id="@+id/imageVector7"
+                                android:layout_width="18dp"
+                                android:layout_height="21dp"
+                                android:layout_marginStart="@dimen/_15pxh"
+                                android:layout_marginEnd="@dimen/_14pxh"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/stock_vector"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/txtCategory13"
+                                style="@style/txtPoppinssemibold18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5pxv"
+                                android:text="@string/lbl_stock"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageVector7"
+                                tools:text="@string/lbl_stock" />
+
+                            <TextView
+                                android:id="@+id/txtCategory14"
+                                style="@style/txtPoppinssemibold18_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4pxh"
+                                android:layout_marginEnd="@dimen/_4pxh"
+                                android:text="@{dashboardSuperadminVM.dashboardSuperadminModel.stock}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtCategory13"
+                                tools:text="@string/lbl_1000" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sp"
+                    android:layout_marginTop="@dimen/_25sp"
+                    android:gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintGroup86"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="@dimen/_40sp"
+                        android:layout_height="@dimen/_35sp"
+                        android:src="@drawable/mwb_logo"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:lines="2"
+                        style="@style/txtRobotobold20"
+                        android:textSize="@dimen/_15sp"
+                        android:textStyle="italic"
+                        android:layout_marginStart="@dimen/_5sp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_copyright"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout android:id="@+id/leftDrawer"
+            android:layout_gravity="start"
+            android:layout_height="match_parent"
+            android:layout_width="@dimen/_250pxh"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/included"
+                drawerItemDrawerMenuModel="@{dashboardSuperadminVM.includedModel}"
+                layout="@layout/drawer_item_drawer_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

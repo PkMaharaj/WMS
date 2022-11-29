@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="branchrecyclerRowModel" type="com.wms.superadmin.modules.transaction.data.model.TransactionRowModel"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_5pxh"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+     android:layout_marginBottom="@dimen/_5pxh"
+        style="@style/table_row">
+   <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:minHeight="@dimen/_30pxh"
+    android:orientation="horizontal">
+        <TextView
+            android:id="@+id/so_branchname"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@{branchrecyclerRowModel.branchName}"
+            tools:text="@string/lbl_hubli"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/so_totalvouchercount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@{branchrecyclerRowModel.billAmount.toString()}"
+            tools:text="@string/lbl_10"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/so_value"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@{branchrecyclerRowModel.totalBalance.toString()}"
+            tools:text="@string/lbl_0"
+            android:gravity="center" />
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/agingLayout"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_5pxh"
+            android:padding="@dimen/_2pxh"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/first_aging"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:text="0000"
+                android:paddingStart="@dimen/_5pxh"
+                android:text="@{branchrecyclerRowModel.agingBalance1.toString()}"
+                android:gravity="start" />
+
+
+
+            <TextView
+                android:id="@+id/second_aging"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:text="0000"
+                android:paddingEnd="@dimen/_5pxh"
+                android:text="@{branchrecyclerRowModel.agingBalance2.toString()}"
+                android:paddingStart="@dimen/_5pxh"
+                android:gravity="end" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1pxh"
+            android:visibility="gone"
+            android:background="@color/red_600"/>
+    </LinearLayout>
+</layout>

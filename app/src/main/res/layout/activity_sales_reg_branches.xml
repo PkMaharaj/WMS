@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="salesRegBranchesVM"
+            type="com.wms.superadmin.modules.salesregbranches.data.viewmodel.SalesRegBranchesVM"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintSalesregbranc"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        style="@style/groupStylewhite_A700">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            style="@style/groupStyledeep_orange_100"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            app:contentInsetStart="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintToolbar"
+                style="@style/groupStyledeep_orange_100"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtOrder"
+                    style="@style/txtRobotobold23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
+                    android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtOrder}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/backLSRB"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/backLSRB"
+                    android:layout_width="@dimen/_40pxh"
+                    android:layout_height="@dimen/_40pxh"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/backSRB"
+                        android:layout_width="@dimen/_15pxh"
+                        android:layout_height="@dimen/_20pxh"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_frame61"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtSalesOrder" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/constraintGroup13"
+            style="@style/groupStyledeep_orange_100cornerRadius"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup18">
+
+            <TextView
+                android:id="@+id/txtBranch"
+                style="@style/txtRobotobold12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:layout_marginStart="10dp"
+                android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtBranch}"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold"
+                tools:text="@string/lbl_branch" />
+
+            <TextView
+                android:id="@+id/txtDebit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtDebit}"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold"
+                tools:text="@string/lbl_debit" />
+
+            <TextView
+                android:id="@+id/txtCredit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtCredit}"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold"
+                tools:text="@string/lbl_credit" />
+
+            <TextView
+                android:id="@+id/txtNetSales"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtNetSales}"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSalesRegBranches"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/constraintGroup60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup13"
+            tools:listitem="@layout/row_sales_reg_branches1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintGroup18"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnersearchLayout">
+
+            <LinearLayout
+                android:id="@+id/linearHeadline"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30pxh"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_8pxv"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:elevation="@dimen/_5pxh"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/txtFrom"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtFrom}"
+                    tools:text="@string/lbl_from" />
+
+                <TextView
+                    android:id="@+id/txtFromdate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtFromdate}"
+                    tools:text="@string/lbl_21_01_2022" />
+
+                <TextView
+                    android:id="@+id/txtTo"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtTo}"
+                    tools:text="@string/lbl_to" />
+
+                <TextView
+                    android:id="@+id/txtTodate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtTodate}"
+                    tools:text="@string/lbl_21_01_2022" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/spinnersearchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar">
+
+            <Spinner
+                android:id="@+id/spinnersalesregbranch"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40pxh"
+                android:layout_gravity="start"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/rectangle_bg_red_200_radius_5"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/spinner_item" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40pxh"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:background="@drawable/rectangle_bg_deep_orange_100_radius_5"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/lbl_search"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/constraintGroup60"
+            style="@style/groupStyledeep_orange_101"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total"
+                android:textStyle="bold"
+                android:textSize="@dimen/_18sp"
+                android:layout_marginStart="@dimen/_10pxh"/>
+
+            <TextView
+                android:id="@+id/txtTotaldebitBranch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:layout_weight="0.7"
+                android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtTotaldebitBranch}"
+                android:textSize="@dimen/_15pxh"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalvouchercount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:layout_weight="0.7"
+                android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtTotalcreditBranch}"
+                android:textSize="@dimen/_15pxh"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:layout_weight="0.7"
+                android:text="@{salesRegBranchesVM.salesRegBranchesModel.txtTotalnetsalesBranch}"
+                android:textSize="@dimen/_15pxh"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="DrawerItemDrawerMenuModel" type="com.wms.superadmin.modules.dashboardsuperadmin.data.model.DrawerItemDrawerMenuModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintGroup69"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        style="@style/groupStylewhite_A700">
+        <ScrollView android:clipToPadding="false"
+            android:fillViewport="true"
+            android:id="@+id/scrollViewScrollview"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintGroup65"
+                android:layout_height="wrap_content" android:layout_width="match_parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintDrawerHeaderb"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_1pxh"
+                    android:layout_marginStart="@dimen/_1pxh"
+                    android:layout_width="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/groupStylewhite_A700">
+
+                    <TextView
+                        android:id="@+id/txtJohnDoe"
+                        style="@style/txtRobotobold20"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="@dimen/_10pxh"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_28pxh"
+                        android:layout_marginEnd="@dimen/_28pxh"
+                        android:gravity="start"
+                        android:text="@{DrawerItemDrawerMenuModel.userName}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/lbl_user" />
+
+                    <TextView android:gravity="start"
+                        android:id="@+id/txtViewProfile"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_22pxv"
+                        android:layout_marginEnd="@dimen/_29pxh"
+                        android:layout_marginStart="@dimen/_29pxh"
+                        android:layout_marginTop="@dimen/_3pxv"
+                        android:layout_width="0dp"
+                        android:text="@{DrawerItemDrawerMenuModel.fermname}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtJohnDoe"
+                        style="@style/txtRobotobold14"
+                        android:textColor="@color/gray_800"
+                        tools:text="bmembortbotrb"/>
+                    <TextView
+                        android:id="@+id/txtViewProfile2"
+                        style="@style/txtRobotobold14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10pxh"
+                        android:layout_marginStart="@dimen/_29pxh"
+                        android:layout_marginEnd="@dimen/_29pxh"
+                        android:gravity="start"
+                        android:text="@{DrawerItemDrawerMenuModel.roleName}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtViewProfile"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textColor="@color/gray_800"
+                        tools:text="@string/lbl_view_profile" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintBackground"
+                    style="@style/groupStyledeep_orange_50"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/_10pxh"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/_1pxh"
+                    android:layout_marginEnd="@dimen/_1pxh"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintDrawerHeaderb">
+
+                    <TextView
+                        android:id="@+id/Attendence"
+                        style="@style/txtPoppinsbold16"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_29pxh"
+                        android:layout_marginTop="@dimen/_33pxv"
+                        android:layout_marginEnd="@dimen/_29pxh"
+                        android:gravity="start"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/lbl_attendance" />
+
+                    <TextView
+                        android:id="@+id/Aboutus"
+                        style="@style/txtPoppinsbold16"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_29pxh"
+                        android:layout_marginTop="@dimen/_17pxv"
+                        android:layout_marginEnd="@dimen/_29pxh"
+                        android:gravity="start"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Attendence"
+                        android:text="@string/lbl_about_us" />
+
+                    <TextView
+                        android:id="@+id/Help"
+                        style="@style/txtPoppinsbold16"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_28pxh"
+                        android:layout_marginTop="@dimen/_17pxv"
+                        android:layout_marginEnd="@dimen/_28pxh"
+                        android:gravity="start"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Aboutus"
+                        android:text="@string/lbl_help" />
+
+                    <TextView
+                        android:id="@+id/Logout"
+                        style="@style/txtPoppinsbold16"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_29pxh"
+                        android:layout_marginTop="@dimen/_17pxv"
+                        android:layout_marginEnd="@dimen/_29pxh"
+                        android:gravity="start"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Help"
+                        android:text="@string/lbl_logout" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="bottom"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:gravity="center"
+                            app:srcCompat="@drawable/mwb_logo" />
+
+                        <TextView
+                            android:id="@+id/footer_item_1"
+                            style="@style/txtRobotoblack17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_name"
+                            android:textSize="@dimen/_20pxh"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/footer_item_2"
+                            style="@style/txtRobotobold20"
+                            android:layout_width="match_parent"
+                            android:textSize="@dimen/_17sp"
+                            android:textColor="@color/black_900"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="MWB Technologies India PVT. Ltd" />
+
+                        <TextView
+                            android:id="@+id/footer_item_3"
+                            style="@style/txtRobotobold20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:textColor="@color/black_900"
+                            android:text="email us: support@gmail.com"
+                            android:textSize="@dimen/_15sp"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

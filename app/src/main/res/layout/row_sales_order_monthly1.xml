@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="salesOrderMonthly1RowModel" type="com.wms.superadmin.modules.salesorderbranch.data.model.SalesOrderRowModel"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/constraintGroup9"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:weightSum="3"
+        style="@style/table_row">
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/constraintGroup"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:weightSum="4"-->
+<!--        style="@style/table_row">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtMonthSalesregbranch"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="@{salesRegMonth1RowModel.txtMonthSalesregbranch}"-->
+<!--            tools:text="@string/lbl_may"-->
+<!--            android:gravity="center"/>-->
+
+        <TextView
+            android:id="@+id/txtMay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{salesOrderMonthly1RowModel.txtMonth}"
+            tools:text="@string/lbl_hubli"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtvouchers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:text="@{salesOrderMonthly1RowModel.txtvouchers}"
+            tools:text="@string/lbl_10"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/so_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:text="@{salesOrderMonthly1RowModel.totalvalue}"
+            tools:text="@string/lbl_0"
+            android:gravity="center" />
+    </LinearLayout>
+</layout>

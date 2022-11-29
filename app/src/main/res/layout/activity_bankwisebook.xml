@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="bankwisebookVM" type="com.wms.superadmin.modules.bankwisebook.data.viewmodel.BankwisebookVM"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintGroup13"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        style="@style/groupStylewhite_A700">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
+            app:contentInsetStart="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintGroup2"
+                android:layout_height="match_parent" android:layout_width="match_parent">
+                <TextView android:id="@+id/txtBankBook"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageLsgraph"
+                    app:layout_constraintStart_toEndOf="@+id/imageBackImg"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/txtRobotobold17"/>
+
+                <ImageView
+                    android:id="@+id/imageLsgraph"
+                    android:layout_width="@dimen/_26pxh"
+                    android:layout_height="@dimen/_24pxh"
+                    android:layout_marginEnd="@dimen/_5pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_lsgraph"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageBackImg"
+                    style="@style/Toolbar_backNav"
+                    android:src="@drawable/img_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:id="@+id/scrollViewScrollview"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/constraintToolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintBankBook"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+                <LinearLayout
+                    android:id="@+id/branchlinearGroup4"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/_10pxh"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/groupStyledeep_orange_100_abcornerRadius">
+
+                    <TextView android:gravity="center|start"
+                        android:id="@+id/branch"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/lbl_branch_name"
+                        style="@style/txtPoppinssemibold18"/>
+                    <TextView android:gravity="start|center"
+                        android:id="@+id/branchname"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:paddingStart="@dimen/_10pxh"
+                        android:text="@{bankwisebookVM.bankwisebookModel.txtBranchname}"
+                        style="@style/txtPoppinssemibold18_1"
+                        tools:text="@string/lbl_1000_00"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearGroup4"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_margin="@dimen/_10pxh"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/branchlinearGroup4"
+                    style="@style/groupStyledeep_orange_100_abcornerRadius">
+                    <ImageView android:id="@+id/imageWallet"
+                        android:layout_height="@dimen/_25pxh"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_width="@dimen/_25pxh"
+                        android:scaleType="fitXY" android:src="@drawable/img_wallet"/>
+                    <TextView android:gravity="top|center"
+                        android:id="@+id/txttotalCash"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5pxv"
+                        android:layout_marginStart="@dimen/_5pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        style="@style/txtPoppinssemibold18"/>
+                    <TextView android:gravity="start|center"
+                        android:id="@+id/txtCashInBank"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5pxv"
+                        android:layout_marginEnd="@dimen/_15pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:paddingStart="@dimen/_5pxh"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:text="@{bankwisebookVM.bankwisebookModel.txtCashInBank}"
+                        style="@style/txtPoppinssemibold18_1"
+                        tools:text="@string/lbl_1000_00"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearHeadline"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearGroup4">
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtFrom"
+                        android:background="@color/deep_orange_100"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:text="@{bankwisebookVM.bankwisebookModel.txtFrom}"
+                        style="@style/txtRobotobold15"
+                        tools:text="@string/lbl_from"/>
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/txtFromdate"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/outline"
+                        android:layout_width="0dp"
+                        style="@style/txtRobotobold15"/>
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtTo"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:background="@color/deep_orange_100"
+                        android:layout_width="0dp"
+                        android:text="@{bankwisebookVM.bankwisebookModel.txtTo}"
+                        style="@style/txtRobotobold15"
+                        tools:text="@string/lbl_to"/>
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtTodate"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/outline"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        style="@style/txtRobotobold15"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearHeadline1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14pxv"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:padding="@dimen/_5pxh"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearHeadline" style="@style/groupStyledeep_orange_1">
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/txtBranchName"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:text="@string/lbl_bank"
+                        style="@style/txtRobotoboldbank" />
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtOpeningBalance"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:text="@string/lbl_opening_balance"
+                        style="@style/txtRobotoboldbank"
+                        />
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtDebit"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5" android:layout_width="0dp"
+                        android:text="@string/lbl_debit"
+                        style="@style/txtRobotoboldbank"/>
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtCredit"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:text="@string/lbl_credit"
+                        style="@style/txtRobotoboldbank"/>
+                    <TextView android:gravity="center"
+                        android:id="@+id/txtClosingBal"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5" android:layout_width="0dp"
+                        android:text="@string/lbl_closing_balance"
+                        style="@style/txtRobotoboldbank"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerBankwisebooklist"
+                    itemSpace="@{@dimen/_1pxh}"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearHeadline1"
+                    tools:listitem="@layout/row_bankwisebook1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintToolbar"
+            style="@style/groupStyledeep_orange_100"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/txttotalcredirbal"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:text="@string/msg_total_credit_ba"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtop" />
+
+            <TextView
+                android:id="@+id/txcolon1"
+                style="@style/txtRobotobold13"
+                Of="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:text="@string/lbl_colon"
+                android:paddingLeft="@dimen/_22pxh"
+                app:layout_constraintStart_toEndOf="@+id/txtop"
+                app:layout_constraintTop_toBottomOf="@+id/txcolon" />
+
+
+            <TextView
+                android:id="@+id/txtopeningBalance2"
+                style="@style/txtRobotobold13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:layout_marginTop="@dimen/_6pxh"
+                android:text="@{bankwisebookVM.bankwisebookModel.openingBalance}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txcolon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/lbl_450000" />
+
+            <TextView
+                android:id="@+id/txtop"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:text="@string/lbl_opening_balance1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txcolon"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:paddingLeft="@dimen/_22pxh"
+                android:layout_marginStart="5dp"
+                android:text="@string/lbl_colon"
+                app:layout_constraintStart_toEndOf="@+id/txtop"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txtcreditBalance"
+                style="@style/txtRobotobold13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:layout_marginTop="@dimen/_6pxh"
+                android:text="@{bankwisebookVM.bankwisebookModel.totalCreditBalance}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txcolon1"
+                app:layout_constraintTop_toBottomOf="@+id/txtopeningBalance2"
+                tools:text="@string/lbl_450000" />
+
+            <TextView
+                android:id="@+id/txtTotalBal"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:text="@string/lbl_total_bal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTotalBal2" />
+
+            <TextView
+                android:id="@+id/txcolon3"
+                style="@style/txtRobotobold13"
+                Of="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:text="@string/lbl_colon"
+                android:paddingLeft="@dimen/_22pxh"
+                app:layout_constraintStart_toEndOf="@+id/txtop"
+                app:layout_constraintTop_toBottomOf="@+id/txcolon2" />
+
+            <TextView
+                android:id="@+id/txtTotalBal2"
+                style="@style/txtRobotobold13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:layout_marginTop="11dp"
+                android:text="@string/msg_total_debit_bal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txttotalcredirbal" />
+
+            <TextView
+                android:id="@+id/txcolon2"
+                style="@style/txtRobotobold13"
+                Of="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5pxh"
+                android:paddingLeft="@dimen/_22pxh"
+                android:text="@string/lbl_colon"
+                app:layout_constraintStart_toEndOf="@+id/txtop"
+                app:layout_constraintTop_toBottomOf="@+id/txcolon1" />
+
+            <TextView
+                android:id="@+id/txttotalbalance"
+                style="@style/txtRobotobold13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6pxh"
+                android:layout_margin="@dimen/_5pxh"
+                android:text="@{bankwisebookVM.bankwisebookModel.totalDebitBalance}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txcolon2"
+                app:layout_constraintTop_toBottomOf="@+id/txtcreditBalance"
+                tools:text="@string/lbl_450000" />
+
+            <TextView
+                android:id="@+id/txttotalbalance2"
+                style="@style/txtRobotobold13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6pxh"
+                android:layout_margin="@dimen/_5pxh"
+                android:text="@{bankwisebookVM.bankwisebookModel.totalBalance}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txcolon3"
+                app:layout_constraintTop_toBottomOf="@+id/txttotalbalance"
+                tools:text="@string/lbl_450000" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

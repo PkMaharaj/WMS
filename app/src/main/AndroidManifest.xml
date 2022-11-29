@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wms.superadmin">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <application
+        android:name=".appcomponents.di.MyApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/appicon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/appicon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApp"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".extensions.NotificationDialog"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".modules.vocherbankbook.ui.VocherbankbookActivity"
+            android:screenOrientation="fullSensor">
+        </activity>
+        <activity
+            android:name=".modules.bankbook.ui.BankbookActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".modules.bankwisebook.ui.BankwisebookActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".modules.enternumberforgotpassword.ui.EnternumberforgotpasswordActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity
+            android:name=".modules.splashscreen.ui.SplashscreenActivity"
+            android:screenOrientation="fullSensor"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".modules.dashboardsuperadmin.ui.DashboardSuperadminActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.otppassword.ui.OtppasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.newpassword.ui.NewpasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.updatedpassword.ui.UpdatedpasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.login.ui.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.notificationWMS.ui.NotificationWMSActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".modules.salesorderbranch.ui.SalesOrderBranchActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.mobilenotification.ui.MobileNotificationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.salesordermonthly.ui.SalesOrderMonthlyActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.salesordervoucher.ui.SalesOrderVoucherActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.salesregbranches.ui.SalesRegBranchesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.salesregmonth.ui.SalesRegMonthActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.salesregday.ui.SalesRegDayActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.salesregvoucher.ui.SalesRegVoucherActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.notificationapproval.ui.NotificationApprovalActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.transaction.ui.TransactionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.transaction.ui.BranchTXNActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.stocksummary.stockreport.ui.StockreportActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modules.attedence.ui.AttedenceActivity"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

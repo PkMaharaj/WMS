@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="salesOrderBranchVM"
+            type="com.wms.superadmin.modules.salesorderbranch.data.viewmodel.SalesOrderBranchVM"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintSalesorderbra"
+        style="@style/groupStylewhite_A700"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetStart="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintToolbar"
+                style="@style/groupStyledeep_orange_100"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtOrder"
+                    style="@style/txtRobotobold23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtOrder}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/backLSOB"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/backLSOB"
+                    android:layout_width="@dimen/_40pxh"
+                    android:layout_height="@dimen/_40pxh"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/backSOB"
+                        android:layout_width="@dimen/_15pxh"
+                        android:layout_height="@dimen/_20pxh"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_frame61"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtSalesOrder" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <LinearLayout
+            android:id="@+id/constraintGroup56"
+            style="@style/groupStyledeep_orange_100cornerRadius"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40pxh"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup61">
+
+            <TextView
+                android:id="@+id/txtBranch"
+                style="@style/txtRobotobold12"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtBranch}"
+                tools:text="@string/lbl_branch"
+                android:gravity="center"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtTotalVouchers"
+                style="@style/txtRobotobold12"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:gravity="center"
+                android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtTotalVouchers}"
+                tools:text="@string/lbl_total_vouchers"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtheadingvalue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                style="@style/txtRobotobold12"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="1"
+
+                android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtheadingvalue}"
+                tools:text="Value"
+                android:textSize="@dimen/_15pxh"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclersalesorderbranch"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/constraintGroup60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup56"
+            app:layout_constraintVertical_bias="1.0"
+            tools:listitem="@layout/row_sales_order_branch1" />
+
+        <LinearLayout
+            android:id="@+id/constraintGroup327"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/_10pxh"
+            android:layout_height="@dimen/_40pxh"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:layout_marginEnd="@dimen/_10pxh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar">
+
+            <Spinner
+                android:id="@+id/spinnerBtnprimary"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/rectangle_bg_red_200_radius_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/spinner_item" />
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40pxh"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:background="@drawable/rectangle_bg_deep_orange_100_radius_5"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/lbl_search"/>
+        </LinearLayout>
+
+<!--            app:layout_constraintEnd_toStartOf="@+id/monthwise"-->
+<!--            <CheckBox-->
+<!--                android:id="@+id/monthwise"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:ellipsize="end"-->
+<!--                android:singleLine="true"-->
+<!--                android:text="@string/lbl_monthwise"-->
+<!--                android:textColor="@color/black_900"-->
+<!--                android:textSize="@dimen/_12pxh"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/voucherwise"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:text="@string/lbl_monthwise" />-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/voucherwise"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:ellipsize="end"-->
+<!--                android:singleLine="true"-->
+<!--                android:text="@string/lbl_voucherwise"-->
+<!--                android:textColor="@color/black_900"-->
+<!--                android:textSize="@dimen/_12pxh"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                tools:ignore="MissingConstraints,NotSibling"-->
+<!--                tools:layout_editor_absoluteY="1dp"-->
+<!--                tools:text="@string/lbl_voucherwise" />-->
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintGroup61"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup327">
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:id="@+id/constraintGroup54"-->
+            <!--                style="@style/groupStylecornerRadius"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_15pxh"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/txtTo"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/imageCalendaricn"-->
+            <!--                    android:layout_width="@dimen/_19pxh"-->
+            <!--                    android:layout_height="@dimen/_23pxh"-->
+            <!--                    android:layout_marginTop="@dimen/_8pxv"-->
+            <!--                    android:layout_marginEnd="@dimen/_10pxh"-->
+            <!--                    android:layout_marginBottom="@dimen/_8pxv"-->
+            <!--                    android:scaleType="fitXY"-->
+            <!--                    android:src="@drawable/img_calendaricn"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintHorizontal_bias="0.6"-->
+            <!--                    app:layout_constraintStart_toEndOf="@+id/txtFromdate"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/txtFromdate"-->
+            <!--                    style="@style/txtRobotoregular13"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="@dimen/_4pxv"-->
+            <!--                    android:layout_marginEnd="@dimen/_74pxh"-->
+            <!--                    android:layout_marginBottom="@dimen/_4pxv"-->
+            <!--                    android:alpha="0.5"-->
+            <!--                    android:ellipsize="end"-->
+            <!--                    android:singleLine="true"-->
+            <!--                    android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtFromdate}"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="@+id/imageCalendaricn"-->
+            <!--                    app:layout_constraintEnd_toStartOf="@+id/imageCalendaricn"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="@+id/imageCalendaricn"-->
+            <!--                    tools:text="@string/lbl_from_date" />-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:id="@+id/constraintGroup55"-->
+            <!--                style="@style/groupStylecornerRadius"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginEnd="@dimen/_11pxh"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toEndOf="@+id/txtTo"-->
+            <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/imageCalendaricn1"-->
+            <!--                    android:layout_width="@dimen/_19pxh"-->
+            <!--                    android:layout_height="@dimen/_23pxh"-->
+            <!--                    android:layout_marginTop="@dimen/_8pxv"-->
+            <!--                    android:layout_marginEnd="@dimen/_13pxh"-->
+            <!--                    android:layout_marginBottom="@dimen/_8pxv"-->
+            <!--                    android:scaleType="fitXY"-->
+            <!--                    android:src="@drawable/img_calendaricn"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintHorizontal_bias="0.63"-->
+            <!--                    app:layout_constraintStart_toEndOf="@+id/txtTodate"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/txtTodate"-->
+            <!--                    style="@style/txtRobotoregular13"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="@dimen/_10pxh"-->
+            <!--                    android:layout_marginTop="@dimen/_4pxv"-->
+            <!--                    android:layout_marginEnd="@dimen/_86pxh"-->
+            <!--                    android:layout_marginBottom="@dimen/_4pxv"-->
+            <!--                    android:alpha="0.5"-->
+            <!--                    android:ellipsize="end"-->
+            <!--                    android:singleLine="true"-->
+            <!--                    android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtTodate}"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="@+id/imageCalendaricn1"-->
+            <!--                    app:layout_constraintEnd_toStartOf="@+id/imageCalendaricn1"-->
+            <!--                    app:layout_constraintHorizontal_bias="0.05"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="@+id/imageCalendaricn1"-->
+            <!--                    tools:text="@string/lbl_to_date" />-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/txtTo"-->
+            <!--                style="@style/txtRobotobold13"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_14pxh"-->
+            <!--                android:layout_marginTop="@dimen/_12pxv"-->
+            <!--                android:layout_marginEnd="@dimen/_12pxh"-->
+            <!--                android:layout_marginBottom="@dimen/_12pxv"-->
+            <!--                android:ellipsize="end"-->
+            <!--                android:singleLine="true"-->
+            <!--                android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtTo}"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/constraintGroup55"-->
+            <!--                app:layout_constraintHorizontal_bias="0.07"-->
+            <!--                app:layout_constraintStart_toEndOf="@+id/constraintGroup54"-->
+            <!--                app:layout_constraintTop_toTopOf="parent"-->
+            <!--                tools:text="@string/lbl_to" />-->
+
+
+            <LinearLayout
+                android:id="@+id/linearHeadline"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30pxh"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_8pxv"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:elevation="@dimen/_5pxh"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/txtFrom"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtFrom}"
+                    tools:text="@string/lbl_from" />
+
+                <TextView
+                    android:id="@+id/txtFromdate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtFromdate}"
+                    tools:text="@string/lbl_21_01_2022" />
+
+                <TextView
+                    android:id="@+id/txtTo"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtTo}"
+                    tools:text="@string/lbl_to" />
+
+                <TextView
+                    android:id="@+id/txtTodate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesOrderBranchVM.salesOrderBranchModel.txtTodate}"
+                    tools:text="@string/lbl_21_01_2022" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/constraintGroup60"
+            style="@style/groupStyledeep_orange_101"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="@dimen/_30pxh"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/total"
+                android:textStyle="bold"
+                android:textSize="@dimen/_18sp"
+                android:layout_marginStart="@dimen/_10pxh"/>
+            <TextView
+                android:id="@+id/totalvouchercount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:layout_weight="0.7"
+                android:text="@{salesOrderBranchVM.salesOrderBranchModel.totalvouchercount}"
+                android:textSize="@dimen/_15pxh"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold"
+                tools:text="@string/lbl_45"/>
+
+            <TextView
+                android:id="@+id/totalvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_weight="0.5"
+                android:text="@{salesOrderBranchVM.salesOrderBranchModel.totalvalue}"
+                android:textSize="@dimen/_15pxh"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold"
+                tools:text="@string/lbl_45"/>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

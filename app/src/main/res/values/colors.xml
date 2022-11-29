@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+<color name="black_900_7f">#7f000000</color>
+<color name="deep_orange_50">#ffede6</color>
+<color name="red_600">#d95438</color>
+<color name="black_900_null">#000000</color>
+<color name="gray_800">#4f4f4f</color>
+<color name="gray_900">#1c1f30</color>
+<color name="red_200">#e89c8a</color>
+<color name="red_300">#c76b85</color>
+<color name="deep_orange_100_ab">#abfccfb5</color>
+<color name="green_900">#244f00</color>
+    <color name="green_600">#408803</color>
+    <color name="gray_200">#ebebeb</color>
+    <color name="gray_50">#fffafa</color>
+<color name="red_600_96">#96d95438</color>
+<color name="bluegray_900">#333333</color>
+<color name="white_A700_cc">#ccffffff</color>
+<color name="black_900">#0a0a0a</color>
+<color name="bluegray_400">#888888</color>
+<color name="black_901">#0d0a0a</color>
+<color name="black_900_40">#40000000</color>
+<color name="pink_800">#ad2b57</color>
+<color name="white_A700">#ffffff</color>
+<color name="deep_orange_100">#fccfb5</color>
+<color name="ic_launcher_background">#FFFFFF</color>
+
+
+
+    <color name="orange_A100">#ffd975</color>
+    <color name="blue_600">#3385e8</color>
+    <color name="deep_orange_A200_d1">#d1ff5e3d</color>
+    <color name="deep_purple_400">#9152de</color>
+    <color name="indigo_A200">#456be6</color>
+    <color name="orange_600">#fa8a00</color>
+    <color name="amber_300">#ffcc4d</color>
+    <color name="orange_400">#fc9921</color>
+    <color name="green_A200">#70f09c</color>
+    <color name="orange_300">#ffab59</color>
+    <color name="yellow_800">#f29e21</color>
+    <color name="orange_A200_e6">#e6f0a152</color>
+    <color name="deep_orange_300">#ff7a59</color>
+    <color name="deep_orange_500">#ff631a</color>
+    <color name="purple_A200">#eb33d9</color>
+    <color name="pink_400">#e04f75</color>
+    <color name="black_900_26">#26000000</color>
+
+
+    <color name="Transparent">#0000ffff</color>
+</resources>

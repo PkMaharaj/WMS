@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        cornerRadius="10"
+        style="@style/groupStyledeep_orange_100cornerRadius"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/deep_orange_100"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aging"
+        android:layout_weight="3"
+        android:layout_marginStart="@dimen/_15pxh"
+        android:gravity="center"
+        android:textSize="@dimen/_25sp"
+        android:padding="@dimen/_5pxh"
+        android:background="@color/deep_orange_100"
+        style="@style/txtRobotobold20"
+        android:textColor="@color/black" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/cancel"
+            android:elevation="@dimen/_5pxh"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="@dimen/_5pxh"
+            app:tint="@color/black_900"
+            android:src="@drawable/ic_cancel"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/radio_group"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:id="@+id/by_bill"
+                style="@style/txtRobotobold15"
+                android:layout_height="wrap_content"
+                android:text="By Bill Date"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:id="@+id/by_due"
+                style="@style/txtRobotobold15"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:layout_height="wrap_content"
+                android:text="By Due Date"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Aging1"
+        android:hint="Aging Day 1"
+        android:inputType="number"
+        android:layout_marginTop="@dimen/_10pxh"
+        android:layout_marginStart="@dimen/_25pxh"
+        android:layout_marginEnd="@dimen/_25pxh"
+        android:background="@drawable/rounded_edittext"
+        android:gravity="center"
+        android:padding="@dimen/_5pxh"
+        style="@style/txtRobotobold20"
+        android:textColor="@color/black"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Aging2"
+        android:hint="Aging Day 2"
+        android:inputType="number"
+        android:layout_marginTop="@dimen/_20pxh"
+        android:layout_marginStart="@dimen/_25pxh"
+        android:layout_marginEnd="@dimen/_25pxh"
+        android:background="@drawable/rounded_edittext"
+        android:gravity="center"
+        android:padding="@dimen/_5pxh"
+        style="@style/txtRobotobold20"
+        android:textColor="@color/black"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submit_aging"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10pxh"
+        android:padding="@dimen/_10pxh"
+        android:backgroundTint="@color/red_600"
+        style="@style/txtRobotobold15"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

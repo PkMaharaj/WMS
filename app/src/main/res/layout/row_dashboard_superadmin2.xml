@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="dashboardSuperadmin2RowModel" type="com.wms.superadmin.modules.dashboardsuperadmin.data.model.DashboardSuperadmin2RowModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintGroup49"
+        android:layout_height="wrap_content" android:layout_width="match_parent">
+        <ImageView android:clickable="true"
+            android:id="@+id/imageGroup319" android:layout_height="0dp"
+            android:layout_width="@dimen/_183pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_group319"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1.0:0.4918033"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+        <TextView android:gravity="start" android:id="@+id/txtLanguage"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_66pxh"
+            android:layout_marginStart="@dimen/_61pxh"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_width="0dp"
+            android:text="@{dashboardSuperadmin2RowModel.txtLanguage}"
+            app:layout_constraintBottom_toTopOf="@+id/txtLanguage1"
+            app:layout_constraintEnd_toEndOf="@+id/imageGroup319"
+            app:layout_constraintStart_toStartOf="@+id/imageGroup319"
+            app:layout_constraintTop_toTopOf="@+id/imageGroup319"
+            style="@style/txt_3" tools:text="@string/lbl_cash"/>
+        <TextView android:gravity="start" android:id="@+id/txtLanguage1"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_22pxv"
+            android:layout_marginEnd="@dimen/_71pxh"
+            android:layout_marginStart="@dimen/_67pxh"
+            android:layout_marginTop="@dimen/_4pxv"
+            android:layout_width="0dp"
+            android:text="@{dashboardSuperadmin2RowModel.txtLanguage1}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageGroup319"
+            app:layout_constraintEnd_toEndOf="@+id/imageGroup319"
+            app:layout_constraintStart_toStartOf="@+id/imageGroup319"
+            app:layout_constraintTop_toBottomOf="@+id/txtLanguage"
+            style="@style/txt_1" tools:text="@string/lbl_1000"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

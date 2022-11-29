@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="salesRegVoucherVM"
+            type="com.wms.superadmin.modules.salesregvoucher.data.viewmodel.SalesRegVoucherVM"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintSalesregVouch"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:contentInsetStart="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintToolbar"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                style="@style/groupStyledeep_orange_100">
+
+                <TextView
+                    android:id="@+id/txtSalesRegister"
+                    style="@style/txtRobotobold23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_marginBottom="@dimen/_12pxv"
+                    android:gravity="top|start"
+                    android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtOrder}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/backLSRV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/backLSRV"
+                    android:layout_width="@dimen/_40pxh"
+                    android:layout_height="@dimen/_40pxh"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/backSRV"
+                        android:layout_width="@dimen/_15pxh"
+                        android:layout_height="@dimen/_20pxh"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_frame61"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtSalesOrder" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/spinnersearchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar">
+            <Spinner
+                android:id="@+id/spinnersalesregvoucher"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40pxh"
+                android:layout_gravity="start"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_bg_red_200_radius_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar"
+                tools:listitem="@layout/spinner_item" />
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40pxh"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:background="@drawable/rectangle_bg_deep_orange_100_radius_5"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/lbl_search"/>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintGroup331"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnersearchLayout">
+
+            <LinearLayout
+                android:id="@+id/linearHeadline"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30pxh"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_8pxv"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:elevation="@dimen/_5pxh"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/txtFrom"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtFrom}"
+                    tools:text="@string/lbl_from" />
+
+                <TextView
+                    android:id="@+id/txtFromdate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtFromdate}"
+                    tools:text="@string/lbl_21_01_2022" />
+
+                <TextView
+                    android:id="@+id/txtTo"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtTo}"
+                    tools:text="@string/lbl_to" />
+
+                <TextView
+                    android:id="@+id/txtTodate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtTodate}"
+                    tools:text="@string/lbl_21_01_2022" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/constraintGroup52"
+            style="@style/groupStyledeep_orange_100cornerRadius"
+            android:layout_width="0dp"
+            android:weightSum="4"
+            android:layout_height="@dimen/_40pxh"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup331">
+
+            <TextView
+                android:id="@+id/txtDate"
+                style="@style/txtRobotobold12"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtDateParticulars}"
+                tools:text="Date/Particulars" />
+
+
+            <TextView
+                android:id="@+id/txtDebit"
+                style="@style/txtRobotobold12"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtDebit}"
+                tools:text="@string/lbl_debit" />
+
+            <TextView
+                android:id="@+id/txtCredit"
+                style="@style/txtRobotobold12"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtCredit}"
+                tools:text="@string/lbl_credit" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSalesRegVoucher"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/constraintToolbar1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup52"
+            tools:listitem="@layout/row_sales_reg_voucher1" />
+
+        <LinearLayout
+            android:id="@+id/constraintToolbar1"
+            style="@style/groupStyledeep_orange_101"
+            android:layout_width="0dp"
+            android:weightSum="4"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/txtLanguage"
+                android:textSize="@dimen/_18sp"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1.9"
+                android:gravity="center"
+                android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtLanguage}"
+                tools:text="@string/lbl_total" />
+
+            <TextView
+                    android:id="@+id/txt45"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtsalesregvoucherdebit}" />
+
+                <TextView
+                    android:id="@+id/txt46"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="@{salesRegVoucherVM.salesRegVoucherModel.txtsalesregvouchercredit}" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

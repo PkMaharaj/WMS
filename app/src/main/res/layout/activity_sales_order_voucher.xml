@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="salesOrderVoucherVM"
+            type="com.wms.superadmin.modules.salesordervoucher.data.viewmodel.SalesOrderVoucherVM"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintSalesordervou"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        style="@style/groupStylewhite_A700">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetStart="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintToolbar"
+                style="@style/groupStyledeep_orange_100"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtSalesOrder"
+                    style="@style/txtRobotobold23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtOrder}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/backLSOV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/backLSOV"
+                    android:layout_width="@dimen/_40pxh"
+                    android:layout_height="@dimen/_40pxh"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/backSOV"
+                        android:layout_width="@dimen/_15pxh"
+                        android:layout_height="@dimen/_20pxh"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_frame61"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintGroup33"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup327">
+
+            <LinearLayout
+                android:id="@+id/linearHeadline"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30pxh"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_8pxv"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:elevation="@dimen/_5pxh"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/txtFrom"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtFrom}"
+                    tools:text="@string/lbl_from" />
+
+                <TextView
+                    android:id="@+id/txtFromdate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtFromdate}"
+                    tools:text="@string/lbl_21_01_2022" />
+
+                <TextView
+                    android:id="@+id/txtTo"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/deep_orange_100"
+                    android:gravity="center"
+                    android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtTo}"
+                    tools:text="@string/lbl_to" />
+
+                <TextView
+                    android:id="@+id/txtTodate"
+                    style="@style/txtRobotobold15"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/outline"
+                    android:gravity="center"
+                    android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtTodate}"
+                    tools:text="@string/lbl_21_01_2022" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/constraintGroup327"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/_10pxh"
+            android:layout_height="@dimen/_40pxh"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:layout_marginEnd="@dimen/_10pxh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar">
+            <Spinner
+                android:id="@+id/spinnerbranch"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/rectangle_bg_red_200_radius_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/spinner_item" />
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40pxh"
+                android:layout_marginStart="@dimen/_5pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:background="@drawable/rectangle_bg_deep_orange_100_radius_5"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/lbl_search"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/constraintGroup29"
+            style="@style/groupStyledeep_orange_100cornerRadius"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40pxh"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup33">
+
+            <TextView
+                android:id="@+id/txtDate"
+                style="@style/txtRobotobold12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtDate}"
+                tools:text="@string/lbl_date"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15pxh"/>
+
+
+            <TextView
+                android:id="@+id/txtparticulars"
+                style="@style/txtRobotobold12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_marginBottom="@dimen/_4pxv"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtParticulars}"
+                app:layout_constraintBottom_toBottomOf="@+id/txtDate"
+                app:layout_constraintEnd_toStartOf="@+id/txtVocherNo"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toEndOf="@+id/txtParticulars"
+                app:layout_constraintTop_toTopOf="@+id/txtValue"
+                tools:text="Particulars"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15pxh"/>
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtVocherNo"-->
+<!--                style="@style/txtRobotobold12"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_10pxv"-->
+<!--                android:layout_marginBottom="@dimen/_4pxv"-->
+<!--                android:layout_weight="1"-->
+<!--                android:ellipsize="end"-->
+<!--                android:singleLine="true"-->
+<!--                android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtVocherNo}"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/txtDate"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/txtSalesType"-->
+<!--                app:layout_constraintHorizontal_bias="0.04"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/txtLanguage"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/txtValue"-->
+<!--                tools:text="@string/lbl_vocherno"-->
+<!--                android:textStyle="bold"-->
+<!--                android:gravity="center"-->
+<!--                android:textSize="@dimen/_15pxh"/>-->
+
+            <TextView
+                android:id="@+id/txtValue"
+                style="@style/txtRobotobold12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/_10pxh"
+                android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtValue}"
+                tools:text="@string/lbl_value2"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15pxh"/>
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSalesOrderVoucher"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/constraintGroup32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintGroup29"
+            tools:listitem="@layout/row_sales_order_voucher1" />
+
+        <LinearLayout
+            android:id="@+id/constraintGroup32"
+            style="@style/groupStyledeep_orange_101"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_weight="0.5"
+                android:text="@string/total"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtvouchers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:singleLine="true"
+                android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.txtvouchers}"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalvalue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:singleLine="true"
+                android:text="@{salesOrderVoucherVM.salesOrderVoucherModel.totalvaluevoucher}"
+                android:textSize="@dimen/_15pxh"
+                android:textStyle="bold"
+                tools:text="@string/lbl_45" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

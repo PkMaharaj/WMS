@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="salesOrderVoucher1RowModel"
+            type="com.wms.superadmin.modules.salesorderbranch.data.model.SalesOrderRowModel"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/constraintsalesorderVoucher"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:weightSum="3.5"
+        style="@style/table_row">
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="false"
+                android:text="@{salesOrderVoucher1RowModel.txtDate}"
+                tools:text="@string/lbl_16_05_2022"
+                android:gravity="start"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10pxh"
+                android:layout_marginBottom="@dimen/_10pxh"/>
+
+            <TextView
+                android:id="@+id/txt10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="false"
+                android:text="@{salesOrderVoucher1RowModel.txtparticulars}"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"/>
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtAbcd"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ellipsize="end"-->
+<!--                android:singleLine="false"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:text="@{salesOrderVoucher1RowModel.txtvouchernumber}"-->
+<!--               -->
+<!--                tools:text="@string/lbl_abcd"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:gravity="center"/>-->
+
+            <TextView
+                android:id="@+id/txt55"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="false"
+                android:layout_marginEnd="5dp"
+                android:text="@{salesOrderVoucher1RowModel.txtvalue}"
+                tools:text="@string/lbl_55"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+    </LinearLayout>
+</layout>

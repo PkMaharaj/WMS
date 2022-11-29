@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="notificationApproval2RowModel"
+            type="com.wms.superadmin.modules.notificationapproval.data.model.NotificationApprovalRowModel"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/constraintGroup"
+        style="@style/groupStylegray_200"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5pxv"
+        android:layout_width="match_parent"
+        android:weightSum="3.5">
+
+        <TextView
+            android:gravity="top|start"
+            android:id="@+id/txtItemName"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@{notificationApproval2RowModel.txtItemName}"
+            style="@style/txtRobotoregular15"
+            tools:text="@string/lbl_name1"/>
+
+        <TextView android:ellipsize="end" android:gravity="top|start"
+            android:id="@+id/txtWarehousename"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_marginStart="10dp"
+            android:text="@{notificationApproval2RowModel.txtWarehousename}"
+            style="@style/txtRobotomedium13"
+            tools:text="@string/lbl_mwb_dharwad"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:gravity="center"
+            android:id="@+id/txtqtyordered"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:text="@{notificationApproval2RowModel.txtqtyordered}"
+            style="@style/txtRobotomedium13"
+            tools:text="@string/lbl_13_00"/>
+
+        <CheckBox
+            android:id="@+id/chx_fifo"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+    </LinearLayout>
+</layout>

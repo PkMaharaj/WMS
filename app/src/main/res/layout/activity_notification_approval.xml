@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="notificationApprovalVM"
+            type="com.wms.superadmin.modules.notificationapproval.data.viewmodel.NotificationApprovalVM"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintGroup29"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        style="@style/groupStylewhite_A700">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            style="@style/groupStyledeep_orange_100"
+            app:contentInsetStart="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintToolbar"
+                style="@style/groupStyledeep_orange_100"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/backnotificationL"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/backnotification"
+                        android:layout_width="@dimen/_12pxh"
+                        android:layout_height="@dimen/_19pxh"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_frame61"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageEvasavefill"
+                    android:layout_width="@dimen/_24pxh"
+                    android:layout_height="@dimen/_24pxh"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_evasavefill"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/txtSalesOrderApp"
+                    style="@style/txtRobotobold17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
+                    android:text="@{notificationApprovalVM.notificationApprovalModel.txtSalesOrderApp}"
+                    app:layout_constraintEnd_toEndOf="@+id/imageEvasavefill"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/msg_sales_order_app" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <androidx.core.widget.NestedScrollView
+            android:clipToPadding="false" android:fillViewport="true"
+            android:id="@+id/scrollViewScrollview"
+            android:layout_gravity="start" android:layout_height="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/toolbarToolbar">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintNotificationAp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_1pxh"
+                android:layout_width="match_parent">
+                <LinearLayout
+                    android:id="@+id/LCreditLimitAmount"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="0dp"
+                    android:weightSum="1.15"
+                    android:text="@string/msg_credit_limit_am"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCustomercredit"
+                    tools:text="@string/msg_credit_limit_am"
+                    android:orientation="horizontal">
+
+<!--                    style="@style/btnSolidRounded"-->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/creditlimitL"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/oldcreditlmt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Old credit limit amt"
+                            android:enabled="false"
+                            android:text="@{notificationApprovalVM.notificationApprovalModel.oldcreditlmt}"
+                            style="@style/groupStyledeep_orange_100cornerRadius"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/newcreditlmt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="New credit limit amt"
+                            style="@style/groupStyledeep_orange_100cornerRadius"
+                            android:text="@{notificationApprovalVM.notificationApprovalModel.newcreditlmt.toString()}"
+                            android:layout_marginStart="5dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/chx_creditlmt"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.15"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:id="@+id/LCreditDays"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="0dp"
+                    android:weightSum="1.15"
+                    app:layout_constraintBottom_toTopOf="@+id/LNumberOfOutstandingBills"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/LCreditLimitAmount"
+                    android:orientation="horizontal">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/creditdaysL"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/oldcreditdays"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Old credit days"
+                            android:enabled="false"
+                            android:text="@{notificationApprovalVM.notificationApprovalModel.oldcreditdays}"
+                            style="@style/groupStyledeep_orange_100cornerRadius"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/newcreditdays"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="New credit days"
+                            android:text="@{notificationApprovalVM.notificationApprovalModel.newcreditdays.toString()}"
+                            style="@style/groupStyledeep_orange_100cornerRadius"
+                            android:layout_marginStart="5dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/chx_creditdays"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.15"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:id="@+id/LNumberOfOutstandingBills"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="0dp"
+                    android:text="@string/msg_number_of_outst"
+                    app:layout_constraintBottom_toTopOf="@+id/txtOrderdiscount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/LCreditDays"
+                    tools:text="@string/msg_number_of_outst">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/oldoutstandingbillL"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/oldoutstandingbill"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Old Outstanding bills"
+                            android:enabled="false"
+                            android:text="@{notificationApprovalVM.notificationApprovalModel.oldoutstandingbill}"
+                            style="@style/groupStyledeep_orange_100cornerRadius"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/newoutstandinngbbill"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="New Outstanding bills"
+                            android:text="@{notificationApprovalVM.notificationApprovalModel.newoutstandingbill}"
+                            style="@style/groupStyledeep_orange_100cornerRadius"
+                            android:layout_marginStart="5dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/chx_outstandingbills"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.15"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtNegativeStock"
+                    style="@style/txtRobotobold17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_9pxh"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
+                    android:text="@{notificationApprovalVM.notificationApprovalModel.txtNegativeStock}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerHorizontalLines2"
+                    tools:text="@string/msg_negative_stock" />
+
+                <TextView
+                    android:id="@+id/txtCustomercredit"
+                    style="@style/txtRobotobold17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/_13pxv"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
+                    android:text="@{notificationApprovalVM.notificationApprovalModel.txtCustomercredit}"
+                    app:layout_constraintBottom_toTopOf="@+id/LCreditLimitAmount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerHorizontalLines"
+                    tools:text="@string/msg_customer_credit" />
+
+                <TextView
+                    android:id="@+id/txtOrderdiscount"
+                    style="@style/txtRobotobold17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
+                    android:text="@{notificationApprovalVM.notificationApprovalModel.txtOrderdiscount}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/LNumberOfOutstandingBills"
+                    tools:text="@string/msg_order_discount" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerHorizontalLines"
+                    itemSpace="@{@dimen/_15pxh}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginEnd="10dp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintGroup11"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/row_notification_approval_negativestock" />
+
+                <LinearLayout
+                    android:id="@+id/constraintGroup11"
+                    style="@style/groupStyledeep_orange_100cornerRadius"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:weightSum="4.5"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerHorizontalLines"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNegativeStock">
+
+                    <TextView
+                        android:id="@+id/txtItemName"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1.5"
+                        android:gravity="start"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtItemName}"
+                        tools:text="@string/lbl_item_name" />
+
+                    <TextView
+                        android:id="@+id/txtWarehousename"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1.5"
+                        android:gravity="center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtWarehousename}"
+                        tools:text="@string/lbl_warehouse_name" />
+
+                    <TextView
+                        android:id="@+id/txtQuantityordere"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtQuantityordere}"
+                        tools:text="@string/msg_quantity_ordere" />
+
+                    <TextView
+                        android:id="@+id/txtNegativeQuanti"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:gravity="top|start"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtNegativeQuanti}"
+                        tools:text="Change qty" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_marginStart="5dp"
+                        android:layout_gravity="center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtApprpove}"
+                        tools:text="Apprpove"
+                        style="@style/txtRobotobold15"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/orderdiscountlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtOrderdiscount">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:hint="@string/lbl_total_quantity">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/totalqtyValue"
+                            style="@style/groupStyledeep_orange_100cornerRadius"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:text="@={notificationApprovalVM.notificationApprovalModel.totalqtyValue}">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:hint="@string/lbl_order_discount">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/orderdiscount"
+                            style="@style/groupStyledeep_orange_100cornerRadius"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="false"
+                            android:text="@={notificationApprovalVM.notificationApprovalModel.orderdiscount}" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:hint="@string/lbl_change_discount">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/orderchangeamt"
+                            style="@style/groupStyledeep_orange_100cornerRadius"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:enabled="true"
+                            android:text="@={notificationApprovalVM.notificationApprovalModel.orderchangeamt}" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/chx_orderdiscount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:gravity="center" />
+                </LinearLayout>
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/etGroup1"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="start"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:background="@drawable/rectangle_border_green_900_radius_15"-->
+<!--                    style="@style/groupStyledeep_orange_100cornerRadius"-->
+<!--                    android:ellipsize="end"-->
+<!--                    android:gravity="top|start"-->
+<!--                    android:hint="@string/lbl_total_quantity"-->
+<!--                    android:inputType="text"-->
+<!--                    android:textColorHint="@color/gray_800"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/txtOrderdiscount"-->
+<!--                    tools:ignore="Autofill">-->
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/totalqtyValue"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        style="@style/groupStyledeep_orange_100cornerRadius"-->
+<!--                        android:enabled="false"-->
+<!--                        android:text="@={notificationApprovalVM.notificationApprovalModel.totalqtyValue}"-->
+<!--                        android:textStyle="bold">-->
+<!--                    </com.google.android.material.textfield.TextInputEditText>-->
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/etGroup2"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="start"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:background="@drawable/rectangle_border_green_900_radius_15"-->
+<!--                    android:ellipsize="end"-->
+<!--                    android:gravity="top|start"-->
+<!--                    android:hint="@string/lbl_order_discount"-->
+<!--                    android:inputType="text"-->
+<!--                    android:textColorHint="@color/gray_800"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/etGroup3"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/etGroup1"-->
+<!--                    tools:ignore="Autofill">-->
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/orderdiscount"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:enabled="false"-->
+<!--                        android:textStyle="bold"-->
+<!--                        style="@style/groupStyledeep_orange_100cornerRadius"-->
+<!--                        android:text="@={notificationApprovalVM.notificationApprovalModel.orderdiscount}">-->
+<!--                    </com.google.android.material.textfield.TextInputEditText>-->
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:background="@drawable/rectangle_border_green_900_radius_15"-->
+<!--                    android:ellipsize="end" android:gravity="top|start"-->
+<!--                    android:hint="@string/lbl_change_discount"-->
+<!--                    android:id="@+id/etGroup3" android:inputType="text"-->
+<!--                    android:layout_gravity="start"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="@dimen/_13pxh"-->
+<!--                    android:layout_marginStart="@dimen/_8pxh"-->
+<!--                    android:layout_marginTop="@dimen/_14pxv"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:textColorHint="@color/gray_800"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/etGroup2"-->
+<!--                    tools:ignore="Autofill">-->
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/orderchangeamt"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:text="@={notificationApprovalVM.notificationApprovalModel.orderchangeamt}"-->
+<!--                        style="@style/groupStyledeep_orange_100cornerRadius">-->
+<!--                    </com.google.android.material.textfield.TextInputEditText>-->
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <TextView
+                    android:id="@+id/txtLanguage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="@{notificationApprovalVM.notificationApprovalModel.txtLanguage}"
+                    app:layout_constraintBottom_toTopOf="@+id/txtFIFOSKIPPEDLayout"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reasonrejectL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    app:layout_constraintTop_toBottomOf="@+id/orderdiscountlayout">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/reasonofrejection"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Reason of Rejection"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtreasonofrejection}"
+                        style="@style/groupStyledeep_orange_100cornerRadius">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_approve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/reasonrejectL">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/approve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_40pxv"
+                    android:layout_weight="1"
+                    android:layout_gravity="top|start"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:text="@string/lbl_approve"
+                    android:textAllCaps="false"
+                    tools:text="@string/lbl_approve"
+                    android:textColor="@color/white"
+                    android:background="@color/green_A200"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/reject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_40pxv"
+                    android:layout_weight="1"
+                    android:layout_gravity="top|start"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:text="@string/lbl_reject"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etGroup3"
+                    tools:text="@string/lbl_reject"
+                    android:textColor="@color/white"
+                    android:background="@color/red_200"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/draft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_40pxv"
+                        android:layout_weight="1"
+                        android:layout_gravity="top|start"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="Draft"
+                        android:textAllCaps="false"
+                        tools:text="Draft"
+                        android:textColor="@color/white"
+                        android:background="@color/red_200"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerHorizontalLines1"
+                    itemSpace="@{@dimen/_20pxh}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintHeadline"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/row_notification_approval_fifoskipped" />
+
+                <LinearLayout
+                    android:id="@+id/constraintHeadline"
+                    style="@style/groupStyledeep_orange_100cornerRadius"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtFIFOSKIPPEDLayout">
+
+                    <TextView
+                        android:id="@+id/txtItemName1"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_weight="0.8"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtItemName1}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/txtWarehousename1"
+                        app:layout_constraintHorizontal_bias="0.04"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/lbl_item_name" />
+
+                    <TextView
+                        android:id="@+id/txtWarehousename1"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.2"
+                        android:ellipsize="end"
+                        android:gravity="top|center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtWarehousename1}"
+                        tools:text="@string/lbl_warehouse_name" />
+
+                    <TextView
+                        android:id="@+id/txtQuantityordered"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtQuantityordere1}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.01"
+                        app:layout_constraintStart_toEndOf="@+id/txtWarehousename1"
+                        app:layout_constraintTop_toTopOf="@+id/txtItemName1"
+                        tools:text="@string/msg_quantity_ordere" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="5dp"
+                        android:layout_gravity="center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtApprpove}"
+                        tools:text="Apprpove"
+                        style="@style/txtRobotobold15"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerHorizontalLines2"
+                    itemSpace="@{@dimen/_20pxh}"
+                    tools:itemCount="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintGroup6"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    tools:listitem="@layout/row_notification_approval_itemdiscounts" />
+
+                <LinearLayout
+                    android:id="@+id/constraintGroup6"
+                    style="@style/groupStyledeep_orange_100cornerRadius"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40pxh"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:weightSum="4.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtItemdiscount">
+
+                    <TextView
+                        android:id="@+id/txtItemName2"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="top|center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtItemName2}"
+                        tools:text="@string/lbl_item_name" />
+
+                    <TextView
+                        android:id="@+id/txtWarehousename2"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="top|center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtQuantityordere}"
+                        tools:text="@string/msg_quantity_ordere" />
+
+
+                    <TextView
+                        android:id="@+id/txtDiscount"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtDiscount}"
+                        tools:text="@string/lbl_discount" />
+
+
+
+                    <TextView
+                        android:id="@+id/txtChangeamount"
+                        style="@style/txtRobotobold15"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top|end"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtChangeamount}"
+                        tools:text="@string/lbl_change_amount" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_gravity="center"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtApprpove}"
+                        tools:text="Apprpove"
+                        style="@style/txtRobotobold15"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/txtFIFOSKIPPEDLayout"
+                    style="@style/txtRobotobold17"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtLanguage"
+                    tools:text="@string/lbl_fifo_skipped"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/txtFIFOSKIPPED"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        style="@style/txtRobotobold17"
+                        android:text="@{notificationApprovalVM.notificationApprovalModel.txtFIFOSKIPPED}"
+                        tools:text="@string/lbl_fifo_skipped"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtItemdiscount"
+                    style="@style/txtRobotobold17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:gravity="top|start"
+                    android:text="@{notificationApprovalVM.notificationApprovalModel.txtItemdiscount}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerHorizontalLines1"
+                    tools:text="@string/msg_item_discount_d" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

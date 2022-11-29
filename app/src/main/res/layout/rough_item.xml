@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="bankbook1RowModel" type="com.wms.superadmin.modules.bankbook.data.model.Bankbook1RowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearGroup"
+        android:layout_height="@dimen/_30pxh"
+        android:layout_width="match_parent"
+        android:weightSum="3"
+        android:orientation="horizontal" style="@style/groupStyledeep_orange_50">
+        <TextView android:gravity="center|start"
+            android:id="@+id/txtBranchName"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_5pxh"
+            android:layout_width="0dp"
+            android:text="@{bankbook1RowModel.BranchName}"
+            style="@style/txtRobotoregularbank" tools:text="@string/lbl_mwb_darwad"/>
+        <TextView android:gravity="center"
+            android:id="@+id/txtOpeningBalance"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" android:layout_width="0dp"
+            android:text="@{bankbook1RowModel.OpeningBalance}"
+            style="@style/txtRobotoboldbank" tools:text="@string/lbl_1_50_000"/>
+        <TextView android:gravity="center"
+            android:id="@+id/txtDebit"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" android:layout_width="0dp"
+            android:text="@{bankbook1RowModel.Debit}"
+            style="@style/txtRobotoboldbank" tools:text="@string/lbl_0_0"/>
+        <TextView android:gravity="center"
+            android:id="@+id/txtCredit"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:text="@{bankbook1RowModel.Credit}"
+            style="@style/txtRobotoboldbank" tools:text="@string/lbl_0_0"/>
+        <TextView android:gravity="center"
+            android:id="@+id/ClosingBal"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" android:layout_width="0dp"
+            android:text="@{bankbook1RowModel.ClosingBal}"
+            style="@style/txtRobotoboldbank" tools:text="@string/lbl_1_50_000"/>
+    </LinearLayout>
+</layout>

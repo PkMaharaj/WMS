@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="attedenceVM"
+            type="com.wms.superadmin.modules.attedence.data.viewmodel.AttedenceVM" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/linearAttedence"
+        style="@style/groupStylewhite_A700"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearGroup3"
+            android:background= "@color/deep_orange_100_ab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetStart="0dp">
+
+                <FrameLayout
+                    android:id="@+id/frameGroup5"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_160pxv"
+                    android:paddingBottom="@dimen/_10pxh">
+
+                    <ImageView
+                        android:id="@+id/imageVector"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/attendance_backtop" />
+
+                    <ImageView
+                        android:id="@+id/imageArrowleft"
+                        style="@style/Toolbar_backNav"
+                        android:layout_margin="@dimen/_10pxh"
+                        android:src="@drawable/img_back" />
+
+                    <TextView
+                        android:id="@+id/txtAttedence"
+                        style="@style/txtRobotobold20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_25pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_marginBottom="@dimen/_70pxv"
+                        android:gravity="bottom|center"
+                        android:text="@string/lbl_attendance" />
+
+                    <TextView
+                        android:id="@+id/txtWeekday"
+                        style="@style/txtRobotobold20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_60pxv"
+                        android:gravity="bottom|center"
+                        android:textColor="@color/black_900"
+                        android:textSize="@dimen/_24sp"
+                        tools:text="sunday" />
+
+                    <TextClock
+                        android:id="@+id/txtTime"
+                        style="@style/txtRobotobold20"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/_25sp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black_900"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/_2pxh"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        tools:text="10:00 AM" />
+                </FrameLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                style="@style/txtRobotobold20"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_24sp"
+                android:textColor="@color/black_900"
+                android:layout_marginBottom="@dimen/_10pxh"
+                android:gravity="center"
+                tools:text="@string/date2" />
+
+            <TextView
+                android:id="@+id/txtLocation"
+                style="@style/txtRobotoregular25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_6pxv"
+                android:layout_marginBottom="@dimen/_18pxv"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@{attedenceVM.attedenceModel.txtLocation}"
+                android:visibility="gone"
+                tools:text="Location" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:layout_marginTop="@dimen/_25sp">
+
+                    <Spinner
+                        android:id="@+id/spinnerCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.5"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:background="@drawable/rectangle_bg_deep_orange_100_radius_5"
+                        tools:listitem="@layout/spinner_item" />
+
+                    <ToggleButton
+                        android:id="@+id/toggleButton"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_weight="0.5"
+                        android:layout_height="@dimen/_40pxh"
+                        android:background="@drawable/rectangle_bg_deep_orange_100_radius_5"
+                        android:checked="true"
+                        android:textOff="OUT"
+                        android:textOn="IN" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageCamera"
+                    android:layout_width="@dimen/_170pxh"
+                    android:layout_height="@dimen/_170pxh"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:clickable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_camera" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/login"
+                    android:layout_width="150sp"
+                    android:layout_height="150sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_30sp"
+                    android:background="@drawable/ckeck_in_background"
+                    android:text="CHECK IN"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_22sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/logout"
+                    android:layout_width="150sp"
+                    android:layout_height="150sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_30sp"
+                    android:background="@drawable/check_out_background"
+                    android:text="CHECK OUT"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_22sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</layout>

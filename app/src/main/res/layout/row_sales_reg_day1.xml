@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="salesRegDay1RowModel"
+            type="com.wms.superadmin.modules.salesregday.data.model.SalesRegDay1RowModel"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/constraintGroupVoucher"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:weightSum="4"
+        style="@style/table_row">
+
+        <TextView
+            android:id="@+id/txtDateSalesregday"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:text="@{salesRegDay1RowModel.txtDateSalesregday}"
+            tools:text="@string/lbl_16_05_2022"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/txtDebitSalesregday"
+            android:layout_gravity="top"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1.25"
+            android:text="@{salesRegDay1RowModel.txtDebitSalesregday.toString()}"
+            android:gravity="center"
+            tools:text="@string/lbl_100"/>
+
+        <TextView
+            android:id="@+id/txtCreditSalesregday"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1.25"
+            android:text="@{salesRegDay1RowModel.txtCreditSalesregday.toString()}"
+            tools:text="@string/lbl_100"
+            android:gravity="center"/>
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtNetsalesSalesregday"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="@{salesRegDay1RowModel.txtNetsalesSalesregday}"-->
+<!--            tools:text="@string/lbl_10"-->
+<!--            android:gravity="center"/>-->
+    </LinearLayout>
+</layout>
